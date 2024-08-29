@@ -1,14 +1,26 @@
 import { Hamburger, Logo } from ".";
+import { useMediaQuery } from "../../shared/hooks/useMediaQuery";
+import { UiButton } from "../uikit/UiButton";
 
 export function Header() {
+  const isDesktop = useMediaQuery("(min-width: 768px)");
   return (
-    <header className="px-6 py-6">
+    <header>
       <div className="flex justify-between">
         <div className="flex gap-2 font-bold text-xl">
           <Logo />
           Abito
         </div>
-        <Hamburger />
+        {isDesktop ? (
+          <div className="flex gap-4 items-center">
+            <button className="hover:text-gray-400 transition-colors">
+              Вход и Регистрация
+            </button>
+            <UiButton>Подать объявление</UiButton>
+          </div>
+        ) : (
+          <Hamburger />
+        )}
       </div>
     </header>
   );
