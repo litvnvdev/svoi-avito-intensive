@@ -1,11 +1,12 @@
 import { Hamburger, Logo } from ".";
 import { useMediaQuery } from "../../shared/hooks/useMediaQuery";
+import { Search } from "../search";
 import { UiButton } from "../uikit/UiButton";
 
 export function Header() {
   const isDesktop = useMediaQuery("(min-width: 768px)");
   return (
-    <header>
+    <header className="flex flex-col gap-6">
       <div className="flex justify-between">
         <div className="flex gap-2 font-bold text-xl">
           <Logo />
@@ -22,6 +23,7 @@ export function Header() {
           <Hamburger />
         )}
       </div>
+      <Search />
     </header>
   );
 }

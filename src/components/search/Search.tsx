@@ -3,7 +3,7 @@ import { SearchIcon } from "./SearchIcon";
 
 export function Search() {
   return (
-    <div className="w-full rounded-lg flex justify-between items-center bg-blue-600 p-1">
+    <div className="w-full rounded-lg flex justify-between items-center bg-blue-500 p-1">
       <input
         type="text"
         placeholder="Поиск по объявлениям"
