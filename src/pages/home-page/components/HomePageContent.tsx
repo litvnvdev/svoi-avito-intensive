@@ -1,4 +1,3 @@
-import { Services } from "../../../components/services-and-facilities";
 import { Title } from "../../../components/uikit/Title";
 import { UiCard } from "../../../components/uikit/UiCard";
 
@@ -39,14 +38,17 @@ const cardData = [
 
 export function HomePageContent() {
   return (
-    <div className="mt-8 flex flex-col">
-      <Title>Рекомендации для вас</Title>
-      <div className="grid grid-cols-1 gap-8">
-        {cardData.map((card) => (
-          <UiCard key={card.id} {...card} />
-        ))}
+    <>
+      <div className="mt-8 flex flex-col lg:flex-row">
+        <div className="flex flex-col">
+          <Title>Рекомендации для вас</Title>
+          <div className="grid grid-cols-1 justify-items-center lg:justify-items-start md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+            {cardData.map((card) => (
+              <UiCard key={card.id} {...card} />
+            ))}
+          </div>
+        </div>
       </div>
-      <Services />
-    </div>
+    </>
   );
 }

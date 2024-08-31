@@ -8,7 +8,7 @@ export function Header() {
   return (
     <header className="flex flex-col gap-6">
       <div className="flex justify-between">
-        <div className="flex gap-2 font-bold text-xl">
+        <div className="flex gap-2 font-bold text-xl cursor-pointer">
           <Logo />
           Abito
         </div>
