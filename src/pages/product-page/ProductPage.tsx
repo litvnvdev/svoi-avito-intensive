@@ -1,14 +1,15 @@
 import { Header } from "../../components/header";
 import { Layout } from "../../components/layout";
 import { Services } from "../../components/services-and-facilities";
-import { ProductPage } from "../product-page/ProductPage";
-import { HomePageContent } from "./components";
+import { ProductContent } from "./components";
+import { pageProductData } from "./constants";
 
-export function HomePage() {
+export function ProductPage() {
+  const newPageData = pageProductData[0];
+  console.log(newPageData);
   return (
     <Layout header={<Header />} sidebar={<Services />}>
-      <HomePageContent />
-      <ProductPage />
+      <ProductContent {...newPageData} />
     </Layout>
   );
 }
