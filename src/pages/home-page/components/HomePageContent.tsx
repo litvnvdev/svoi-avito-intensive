@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 import { Title } from "../../../components/uikit/Title";
 import { UiCard } from "../../../components/uikit/UiCard";
+import { pageProductData } from "../../product-page/constants";
 
 const cardData = [
   {
@@ -42,9 +44,11 @@ export function HomePageContent() {
       <div className="mt-8 flex flex-col lg:flex-row">
         <div className="flex flex-col">
           <Title>Рекомендации для вас</Title>
-          <div className="grid grid-cols-1 justify-items-center lg:justify-items-start md:grid-cols-2 lg:grid-cols-3 gap-8 ">
-            {cardData.map((card) => (
-              <UiCard key={card.id} {...card} />
+          <div className="grid grid-cols-1 justify-items-start sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
+            {pageProductData.map((card) => (
+              <Link key={card.id} to={`product-page/${card.id}`}>
+                <UiCard {...card} />
+              </Link>
             ))}
           </div>
         </div>

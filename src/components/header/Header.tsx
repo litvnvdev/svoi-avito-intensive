@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Hamburger, Logo } from ".";
 import { useMediaQuery } from "../../shared/hooks/useMediaQuery";
 import { Search } from "../search";
@@ -8,10 +9,12 @@ export function Header() {
   return (
     <header className="flex flex-col gap-6">
       <div className="flex justify-between">
-        <div className="flex gap-2 font-bold text-xl cursor-pointer">
-          <Logo />
-          Abito
-        </div>
+        <Link to="/">
+          <div className="flex gap-2 font-bold text-xl cursor-pointer">
+            <Logo />
+            Abito
+          </div>
+        </Link>
         {isDesktop ? (
           <div className="flex gap-4 items-center">
             <button className="hover:text-gray-400 transition-colors">
