@@ -18,7 +18,7 @@ export function UiCard({ title, img, price, address, date }: UiCardProps) {
         {title}
       </h1>
       <h3 className="font-bold text-lg group-hover:text-gray-400 transition-colors">
-        {price} ₽
+        {price.toLocaleString()} ₽
       </h3>
       <div className="flex flex-col gap-1 text-gray-300">
         <p>{address}</p>
